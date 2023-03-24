@@ -71,6 +71,50 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-筛法" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/03/25/%E7%AD%9B%E6%B3%95/" class="article-date">
+  <time class="dt-published" datetime="2023-03-24T16:00:22.000Z" itemprop="datePublished">2023-03-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/03/25/%E7%AD%9B%E6%B3%95/">筛法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="筛法参考"><a href="#筛法参考" class="headerlink" title="筛法参考"></a>筛法参考</h1><h2 id="埃氏筛"><a href="#埃氏筛" class="headerlink" title="埃氏筛"></a><a target="_blank" rel="noopener" href="https://blog.csdn.net/holly_Z_P_F/article/details/85063174">埃氏筛</a></h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">int</span> N=<span class="number">1e8</span>+<span class="number">6</span>;</span><br><span class="line"><span class="type">bool</span> vis[N];</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">prime</span><span class="params">(<span class="type">int</span> n)</span></span>&#123;</span><br><span class="line">    vis[<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">2</span>;i*i&lt;=n;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(vis[i]==<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j=i*i;j&lt;=n;j+=i)</span><br><span class="line">                vis[j]=<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="线性筛-欧拉筛"><a href="#线性筛-欧拉筛" class="headerlink" title="线性筛(欧拉筛)"></a><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41653433/article/details/88976544">线性筛(欧拉筛)</a></h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">bool</span> vis[N];</span><br><span class="line"><span class="type">int</span> prime[N];<span class="comment">//prime[0]表示素数个数</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Prime</span><span class="params">(<span class="type">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">2</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(!vis[i]) prime[++prime[<span class="number">0</span>]]=i;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">1</span>;j&lt;=prime[<span class="number">0</span>]&amp;&amp;i*prime[j]&lt;=n;j++)&#123;</span><br><span class="line">            vis[i*prime[j]]=<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span>(i%prime[j]==<span class="number">0</span>)<span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://1987873567.github.io/2023/03/25/%E7%AD%9B%E6%B3%95/" data-id="clfmqc45p0002n0tzg18qhgw7" data-title="筛法" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-博弈论-1" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2023/03/24/%E5%8D%9A%E5%BC%88%E8%AE%BA-1/" class="article-date">
@@ -217,7 +261,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://1987873567.github.io/2023/03/24/%E5%8D%9A%E5%BC%88%E8%AE%BA-1/" data-id="clfmq9dc60001o0tz2zkz85ss" data-title="博弈论" class="article-share-link">Share</a>
+      <a data-url="https://1987873567.github.io/2023/03/24/%E5%8D%9A%E5%BC%88%E8%AE%BA-1/" data-id="clfmqc4460000n0tz1fbafz39" data-title="博弈论" class="article-share-link">Share</a>
       
       
       
@@ -267,7 +311,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://1987873567.github.io/2023/03/24/%E6%9D%BF%E5%AD%90-1/" data-id="clfmq9dbz0000o0tzh8q0do8h" data-title="板子" class="article-share-link">Share</a>
+      <a data-url="https://1987873567.github.io/2023/03/24/%E6%9D%BF%E5%AD%90-1/" data-id="clfmqc45j0001n0tz2xm41cfn" data-title="板子" class="article-share-link">Share</a>
       
       
       
@@ -308,6 +352,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2023/03/25/%E7%AD%9B%E6%B3%95/">筛法</a>
+          </li>
         
           <li>
             <a href="/2023/03/24/%E5%8D%9A%E5%BC%88%E8%AE%BA-1/">博弈论</a>
